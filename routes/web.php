@@ -37,5 +37,5 @@ Route::middleware('auth')->group(function () {
 
     Route::get('report/daily', [\App\Http\Controllers\ReportController::class, 'daily'])->name('report.daily');
     Route::get('report/monthly', [\App\Http\Controllers\ReportController::class, 'monthly'])->name('report.monthly');
-    Route::get('report/datewise', [\App\Http\Controllers\ReportController::class, 'datewise'])->name('report.datewise');
+    Route::any('report/datewise', [\App\Http\Controllers\ReportController::class, 'datewise'])->name('report.datewise');
 });

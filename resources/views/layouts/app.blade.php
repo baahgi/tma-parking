@@ -9,11 +9,14 @@
 
     <title>Laravel</title>
 
+
+
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     {{-- <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script> --}}
 
-        <script src="{{ mix('js/app.js') }}" defer></script>
+    @stack('styles')
+
 </head>
 <body class="min-h-screen bg-gray-200 font-base">
 <div id="app">
@@ -57,6 +60,7 @@
         </form>
     </div>
 </div>
+<script src="{{ asset('js/app.js') }}" ></script>
 
 @stack('scripts')
 </body>

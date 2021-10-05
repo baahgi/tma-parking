@@ -31,7 +31,7 @@ class HomeController extends Controller
         $todayCheckouts = Parking::whereDate('checkout', Carbon::today())->get();
         $todaysCheckout = $todayCheckouts->count();
 
-        // dd(date('Y-m-d'));
+
 
         $todayCheckouts = Parking::select('amount')
             ->where('date', date('Y-m-d'))

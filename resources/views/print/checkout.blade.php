@@ -98,6 +98,8 @@
       JsBarcode("#barcode", url, {
         height: 60
       });
+
+      window.print()
     </script>
 </body>
 </html>

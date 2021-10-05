@@ -13,11 +13,17 @@ class ParkingController extends Controller
     {
         $parkings = Parking::whereDate('date', Carbon::today())->latest()->paginate(10);
 
+        // $handle = printer_open();
+
+        // printer_close($handle);
+
         return view('parking.index', compact('parkings'));
     }
     public function checkin()
     {
-        return view('parking.checkin');
+        $parking = Parking::where('date', Carbon::today())->latest()->first();
+
+        return view('parking.checkin', compact('parking'));
     }
 
     public function checkout($consignmentno)
@@ -42,7 +48,7 @@ class ParkingController extends Controller
 
         session()->flash('success', 'Checkin entry added successfully');
 
-        return redirect()->back();
+        return redirect()->route('parking.checkin');
     }
 
     public function update(Request $request)

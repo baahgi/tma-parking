@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('notifications')
+@include('layouts.partials.notifications')
 
 <div class="flex flex-col md:flex-row">
 
